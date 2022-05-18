@@ -210,3 +210,10 @@ memberInfo.add("gopal");
 memberInfo.add("kumar");
 println(memberInfo);
 ```
+
+#### Anonymous function
+```kotlin
+var getSum:(Int,Int)->Int={
+    a:Int,b:Int->a+b
+};
+```
