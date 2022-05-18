@@ -437,3 +437,20 @@ class Info{
 var info:Info=Info("Loading....");
 info.showLog();
 ```
+
+#### Inner Class
+Inner class can be define using innner keyword as
+```kotlin
+class Car(val name:String){
+    inner class Engine(val engineName:String){
+        override fun toString(): String {
+            println("$name has $engineName")
+            return super.toString()
+        }
+    }
+}
+
+var mazda:Car=Car("mazda");
+var mazdaEngine=mazda.Engine("rotary");
+println(mazdaEngine.toString())
+```
