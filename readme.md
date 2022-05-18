@@ -30,3 +30,63 @@ var message:String?=null;
 println("Message Count:${message?.length?:0}");
 //Here ?: is the Elvis Operator.
 ```
+
+#### Pairs and Tripples
+In kotlin we can define 2D and 3D grid with pair and triple
+```kotlin
+//Pairs And Triples
+var winner:Pair<String,String> = Pair("Ram","Sita");
+println(winner);
+println(winner.first);
+println(winner.second);
+println(winner.toList())
+val (winnerOne,winnerTwo)=winner;
+println("Winner One:$winnerOne");
+println("Winner Two:$winnerTwo");
+
+var tripple:Triple<Int,Int,Int> = Triple(10,2,52);
+println(tripple);
+val (x,y,z)=tripple;
+//Destructing the values from the triple
+println("$x $y $z");
+```
+
+#### Basic control flow
+
+##### if else statement
+```kotlin
+var isAdmin:Boolean=true;
+if(isAdmin){
+    println("User is admin.");
+}else{
+    println("User is regular user.")
+}
+```
+
+#### Ranges
+```kotlin
+var scalingRange=0..10;
+for (i in scalingRange){
+    println(i)
+}
+```
+
+#### When expression
+```kotlin
+var myChar='C';
+when(myChar){
+    'A','C'->println("My char is A or C")
+    'B'-> println("My chat is B")
+    else-> println("Missed the target")
+}
+```
+We can also return value from when express as
+```kotlin
+var mySymbol="AA";
+var result:String=when(mySymbol){
+    "AA"->"Got AA"
+    "BB"->"Got BB"
+    else->"Missed the target"
+}
+println("Result:$result");
+```
