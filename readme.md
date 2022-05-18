@@ -217,3 +217,43 @@ var getSum:(Int,Int)->Int={
     a:Int,b:Int->a+b
 };
 ```
+
+#### Class
+Class can be created using class keyword as 
+```kotlin
+class User(var fname:String,var lname:String,var age:Int){
+    var fullName:String="$fname $lname";
+    
+    fun showInfo():Unit{
+        println("Name:$fullName Age:$age");
+    }
+}
+```
+Here the properties of the User is mutable.To create 
+immutable properties we need to define properties as val
+```kotlin
+class User(val fname:String,val lname:String,val age:Int){
+    var fullName:String="$fname $lname";
+    
+    fun showInfo():Unit{
+        println("Name:$fullName Age:$age");
+    }
+}
+
+```
+
+#### Data class
+Can be implemented as
+```kotlin
+data class UserInfo(val name:String,val age:Int);
+
+var user1=UserInfo("Khadga Shrestha",25);
+var user2=user1.copy(name="Rameshow shrestha");
+
+println(user1)
+println(user2)
+println(user1==user2)
+
+val (name,age)=user1;
+println("Name:$name Age:$age")
+```
