@@ -90,3 +90,38 @@ var result:String=when(mySymbol){
 }
 println("Result:$result");
 ```
+
+### Functions
+In kotlin,We can define function using fun keyboard as
+```kotlin
+fun greet():Unit{
+    println("Welcome...");
+}
+//By default the return type of this fun is Void[Unit]
+```
+We can pass the params to the fun as 
+```kotlin
+fun  greetUser(name:String){
+    println("Greeting $name");
+}
+```
+Function with params and return type
+```kotlin
+fun getUserInfo(name:String):String{
+    return "Mr.$name";
+}
+```
+#### Function overloading
+Here we can define more than one function with same name but the params or return type should be different.
+```kotlin
+fun greet():Unit{
+    println("Welcome...");
+}
+fun greet(name:String){
+    println("Welcome $name");
+}
+//Calling the two different fun with required params
+greet();
+greet("Khadga Shrestha")
+
+```
