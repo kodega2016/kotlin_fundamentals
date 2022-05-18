@@ -8,7 +8,7 @@ fun main(args:Array<String>){
 }
 ```
 
-##### Variables[by default variable are null safe in nature]
+#### Variables[by default variable are null safe in nature]
 In kotlin variables are declared using var and val with its type,
 var is used to define mutable variable whereas val is used to define a variable as constant.
 
@@ -91,7 +91,7 @@ var result:String=when(mySymbol){
 println("Result:$result");
 ```
 
-### Functions
+#### Functions
 In kotlin,We can define function using fun keyboard as
 ```kotlin
 fun greet():Unit{
@@ -125,7 +125,7 @@ greet();
 greet("Khadga Shrestha")
 ```
 
-### Nullability
+#### Nullability
 In kotlin,variable by default non nullable but we can define null type also
 And we have null safe(?.) and null assertion(!!.) operator.
 ```kotlin
@@ -330,4 +330,50 @@ fun Circle.getInfo():String{
     return "Circle of Radius $radius";
 }
 println(c.getInfo())
+```
+
+#### Inheritance
+Inheriting the properties and methods from one class to another can be achieved as following 
+```kotlin
+open class Person(var name:String,var email:String){
+    open fun showInfo():String{
+        return "Name:$name Email:$email";
+    }
+}
+                     
+class Admin(name:String,email:String,val role:String):Person(
+    name,email
+);
+class Staff(name:String,email:String,val score:Int):Person(name,email){
+    override fun showInfo():String{
+        super.showInfo();
+        return "Staff name:$name with $score point";
+    }
+}
+
+var admin:Admin=Admin("Khadga Shrestha","khadgalovecoding2016@gmail.com","admin");
+var staff:Staff=Staff("Menuka Shrestha","menuka@gmail.com",12);
+
+println(admin.showInfo());
+println( staff.showInfo());
+
+```
+
+#### Polymorphism
+Treat object based on the context
+```kotlin
+fun getUserInfo(user:Admin){
+    var info=user.showInfo();
+    println(info)
+}
+fun getUserInfo(user:Staff){
+    var info=user.showInfo();
+    println(info)
+}
+
+var admin:Admin=Admin("Khadga Shrestha","khadgalovecoding2016@gmail.com","admin");
+var staff:Staff=Staff("Menuka Shrestha","menuka@gmail.com",12);
+
+getUserInfo(admin);
+getUserInfo(staff);
 ```
