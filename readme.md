@@ -288,3 +288,20 @@ class AppUser{
 var devices=AppUser.supportedDevice;
 println("Devices:$devices");
 ```
+
+#### Class and its properties
+We can declare properties of the class as follows and also can pass default value,provide custom getter and setter.
+```kotlin
+class Contact(val name:String,val role:String="User"){
+    var demoMessage:String
+        get() {
+            return "Hey";
+        }
+        set(value){}   
+    
+    init{
+        println("Init")
+    }
+}
+
+```
