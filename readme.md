@@ -305,3 +305,29 @@ class Contact(val name:String,val role:String="User"){
 }
 
 ```
+
+#### Extension properties
+We can extend the properties of the class as
+```kotlin
+class Circle(val radius:Double)
+
+val Circle.area:Double
+    get(){
+        return Math.PI*Math.pow(radius,2.0);
+    }
+
+var c:Circle=Circle(10.0);
+println(c.area)
+```
+
+#### Extension methods
+We can extend the additional functionality by adding extension function as
+```kotlin
+class Circle(val radius:Double){
+}
+
+fun Circle.getInfo():String{
+    return "Circle of Radius $radius";
+}
+println(c.getInfo())
+```
