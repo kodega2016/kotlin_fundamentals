@@ -123,5 +123,30 @@ fun greet(name:String){
 //Calling the two different fun with required params
 greet();
 greet("Khadga Shrestha")
+```
 
+### Nullability
+In kotlin,variable by default non nullable but we can define null type also
+And we have null safe(?.) and null assertion(!!.) operator.
+```kotlin
+var errorCode:Int?;
+errorCode=null;
+println(errorCode)
+println(errorCode.toString()?:"No Error")
+var userRole:String?;
+userRole="admin";
+println(userRole!!.isEmpty());
+```
+##### let() function
+We can use let() to perform type safe operation
+```kotlin
+userRole?.let {
+println("User:${userRole}")
+}
+```
+##### Elvis Operator
+Used to provide default value 
+```kotlin
+var role:String?=null;
+println("User role is ${role?:"user"}")
 ```
