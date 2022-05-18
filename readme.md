@@ -150,3 +150,63 @@ Used to provide default value
 var role:String?=null;
 println("User role is ${role?:"user"}")
 ```
+
+#### Arrays And Lists
+Array can be define as
+```kotlin
+var roles:Array<String> = arrayOf<String>("admin","publisher","user");
+roles=roles.plus("moderator");
+println("${roles.size}");
+print(roles.toList());
+```
+We can iterate over array as
+```kotlin
+roles.forEach {
+    role->
+    run {
+        println("User role:$role")
+    }
+}
+```
+
+#### List
+```kotlin
+var userLists:List<String> = listOf<String>(
+    "kodega","nisma","marjunmer","anish","sunil"
+);
+var subUsers= userLists.subList(0,userLists.size/2);
+println(userLists);
+println(subUsers)
+```
+
+#### Map
+key-value pair 
+```kotlin
+var userInfo= mutableMapOf<String,Any>(
+    "name" to "Khadga",
+    "age" to 25
+);
+
+//userInfo["gender"]="Male";
+userInfo.set("gender","Male");
+println(userInfo)
+println(userInfo["name"]);
+println(userInfo.entries);
+println(userInfo.get("age"));
+println(userInfo.get("status"));
+```
+Accessing the value of the map
+```kotlin
+for((key,value) in userInfo){
+    println("$key $value");
+}
+```
+
+#### Sets
+unique values of types
+```kotlin
+var memberInfo= mutableSetOf<String>("kumar","hari","nisma","kumar");
+memberInfo.add("gopal");
+memberInfo.add("kumar");
+println(memberInfo);
+```
