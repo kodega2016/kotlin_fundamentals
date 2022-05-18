@@ -417,3 +417,23 @@ when(authState){
     is AuthState.Unauthenticated -> println("UnAuthenticated...")
 }
 ```
+
+#### Secondary Constructor
+We can define secondary constructor using constructor keyword as
+```kotlin
+class Info{
+    lateinit var message:String;
+
+    constructor(msg:String){
+        message=msg;
+        println("This is a constructor");
+    }
+    
+    fun showLog(){
+        println("Message:$message")
+    }
+}
+
+var info:Info=Info("Loading....");
+info.showLog();
+```
