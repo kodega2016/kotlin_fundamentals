@@ -377,3 +377,43 @@ var staff:Staff=Staff("Menuka Shrestha","menuka@gmail.com",12);
 getUserInfo(admin);
 getUserInfo(staff);
 ```
+
+#### Abstract class 
+In absrtact class,the methods doesnot have body and the sub class will have to implement the method declared in the abstract class.
+```kotlin
+abstract class BaseAuth{
+    abstract fun login(email:String,password:String);
+
+    fun showLog(){
+        println("Showing log...");
+    }
+}
+class Auth:BaseAuth(){
+    override fun login(email: String, password: String) {
+        println("Login with $email and $password");
+    }
+}
+var auth:BaseAuth=Auth();
+auth.showLog();
+auth.login("khadgalovecoding2016@gmail.com","password");
+```
+
+#### Sealed Class
+Useful when we want to make sure that values of given type can only from a particular set of subtypes.
+```kotlin
+sealed class AuthState{
+    class Unauthenticated:AuthState()
+    class Authenticating:AuthState()
+    class Authenticated(val userID:String):AuthState()
+    class AuthError():AuthState();
+}
+
+//var authState:AuthState=AuthState.Authenticated("userID");
+var authState:AuthState=AuthState.Authenticating();
+when(authState){
+    is AuthState.Authenticating-> println("Authenticating...")
+    is AuthState.Authenticated-> println("Authenticated ${authState.userID}")
+    is AuthState.AuthError-> println("AuthError...")
+    is AuthState.Unauthenticated -> println("UnAuthenticated...")
+}
+```
