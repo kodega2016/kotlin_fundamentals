@@ -454,3 +454,48 @@ var mazda:Car=Car("mazda");
 var mazdaEngine=mazda.Engine("rotary");
 println(mazdaEngine.toString())
 ```
+
+#### Enum Class
+We can define enum as
+```kotlin
+enum class State{
+    Active,Inactive
+}
+
+//With properties
+enum class Status(val forAdmin:Boolean){
+    Active(false),
+    Inactive(false),
+    Rejected(true)
+}
+
+var currentStatus:Status=Status.Active;
+println("Current Status:$currentStatus");
+for (status in Status.values()){
+    println("Status:${status.name} ${status.ordinal} ${status.forAdmin}")
+}
+
+```
+
+#### Interfaces
+defines properties only that needs to implemented by sub class.
+```kotlin
+interface Vehicle{
+    fun start()
+    fun stop()
+}
+
+class Cycle:Vehicle{
+    override fun start(){
+        println("Start...")
+    }
+
+    override fun stop() {
+        println("Stop...")
+    }
+}
+
+var cycle:Vehicle=Cycle();
+cycle.start();
+cycle.stop();
+```
